@@ -1,0 +1,72 @@
+{
+  "availablePoints": 3,
+  "technical": {
+    "name": "Technical",
+    "skills": {
+      "coding": {
+        "level": 2,
+        "points": 4,
+        "pointsToNextLevel": 15,
+        "description": "Programming and development skills"
+      },
+      "security": {
+        "level": 1,
+        "points": 8,
+        "pointsToNextLevel": 10,
+        "description": "Cybersecurity knowledge and practices"
+      },
+      "architecture": {
+        "level": 1,
+        "points": 0,
+        "pointsToNextLevel": 10,
+        "description": "System and software architecture"
+      }
+    }
+  },
+  "communication": {
+    "name": "Communication",
+    "skills": {
+      "writing": {
+        "level": 1,
+        "points": 0,
+        "pointsToNextLevel": 10,
+        "description": "Written communication and documentation"
+      },
+      "speaking": {
+        "level": 1,
+        "points": 0,
+        "pointsToNextLevel": 10,
+        "description": "Verbal communication and presentation"
+      },
+      "networking": {
+        "level": 1,
+        "points": 0,
+        "pointsToNextLevel": 10,
+        "description": "Building professional relationships"
+      }
+    }
+  },
+  "leadership": {
+    "name": "Leadership",
+    "skills": {
+      "teamwork": {
+        "level": 1,
+        "points": 0,
+        "pointsToNextLevel": 10,
+        "description": "Effective collaboration"
+      },
+      "mentoring": {
+        "level": 1,
+        "points": 0,
+        "pointsToNextLevel": 10,
+        "description": "Helping others grow"
+      },
+      "strategy": {
+        "level": 1,
+        "points": 0,
+        "pointsToNextLevel": 10,
+        "description": "Strategic thinking and planning"
+      }
+    }
+  }
+}

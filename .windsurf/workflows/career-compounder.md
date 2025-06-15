@@ -6,6 +6,10 @@ description: Complete 30-minute Career-Compounder daily routine
 
 This master workflow guides you through your complete 30-minute Career-Compounder routine.
 
+## Today's Encouragement
+
+Great job showing up today! Each 30-minute session is a small investment that compounds dramatically over time. Your future self thanks you for your consistency and dedication to professional growth!
+
 ## Overview
 The "30-minute Career-Compounder" consists of 5 blocks:
 1. Scan 🔎 (8 min) - Read new items in your professional space
@@ -39,5 +43,19 @@ The "30-minute Career-Compounder" consists of 5 blocks:
    ```
    
    This will update your streak, show you your progress, and provide encouraging feedback!
+
+8. I'll award skill points based on your current streak:
+   ```bash
+   cd /Users/Gary/development/daily_app01/career_compounder && node skills-tree.js award $(node -e "const data = require('./streak-data.json'); console.log(data.currentStreak)")
+   ```
+   
+   This gamified system helps you visualize your professional growth across different skill areas!
+
+9. I'll ask if you would like to share today's insight on Bluesky:
+   - If yes, I'll run:
+   ```bash
+   cd /Users/Gary/development/daily_app01/career_compounder && node bluesky-poster.js
+   ```
+   - If your post is too long for Bluesky's 300 character limit, I'll suggest creating a shorter "Bluesky version" in your linkedin-posts.md file
 
 Remember, the momentum matters more than the exact timing. The goal is consistent daily progress that compounds over time.

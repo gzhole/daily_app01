@@ -9,6 +9,7 @@ require('dotenv').config(); // Load environment variables from .env file
 const BLUESKY_USERNAME = process.env.BLUESKY_USERNAME || ''; // your-username.bsky.social
 const BLUESKY_PASSWORD = process.env.BLUESKY_PASSWORD || ''; // app password is recommended
 const POSTS_FILE = path.join(__dirname, 'linkedin-posts.md');
+const POSTED_MARKER = '<!-- Posted to Bluesky -->';
 
 // Function to make POST requests
 function httpsPost(options, data) {
@@ -50,13 +51,26 @@ function postToBluesky() {
     return Promise.reject(new Error('No posts found'));
   }
   
-  // Extract the most recent post (assuming format: ### YYYY-MM-DD)
-  const dateRegex = /### (\d{4}-\d{2}-\d{2})/g;
+  // Extract all posts, with preference for Bluesky-specific posts
+  // Look first for Bluesky version posts
+  const blueskyVersionRegex = /### (\d{4}-\d{2}-\d{2}).*Bluesky version/g;
   const dates = [];
   let match;
   
-  while ((match = dateRegex.exec(posts)) !== null) {
-    dates.push({ date: match[1], position: match.index });
+  while ((match = blueskyVersionRegex.exec(posts)) !== null) {
+    dates.push({ date: match[1], position: match.index, isBlueskyVersion: true });
+  }
+  
+  // If no Bluesky-specific posts, fall back to regular posts
+  if (dates.length === 0) {
+    const regularDateRegex = /### (\d{4}-\d{2}-\d{2})/g;
+    while ((match = regularDateRegex.exec(posts)) !== null) {
+      // Skip if this contains 'Bluesky version' as we already processed those
+      const postHeader = posts.substring(match.index, match.index + 50);
+      if (!postHeader.includes('Bluesky version')) {
+        dates.push({ date: match[1], position: match.index, isBlueskyVersion: false });
+      }
+    }
   }
   
   if (dates.length === 0) {
@@ -67,25 +81,52 @@ function postToBluesky() {
   // Sort by date (newest first)
   dates.sort((a, b) => b.date.localeCompare(a.date));
   
-  // Get the most recent post content
-  const latestDate = dates[0];
-  const startPos = posts.indexOf('### ' + latestDate.date);
+  // Find the latest post that hasn't been posted to Bluesky yet
+  let latestUnpostedPost = null;
+  let latestPostContent = null;
+  let latestPostFullContent = null;
+  let latestPostStart = null;
+  let latestPostEnd = null;
   
-  // Extract everything after the date heading until next heading or end
-  let endPos = posts.length;
-  for (let i = 1; i < dates.length; i++) {
-    if (dates[i].position > latestDate.position) {
-      endPos = dates[i].position;
-      break;
+  for (let i = 0; i < dates.length; i++) {
+    const currentDate = dates[i];
+    const startPos = posts.indexOf('### ' + currentDate.date, currentDate.position);
+    
+    // Determine where this post ends
+    let endPos = posts.length;
+    for (let j = 0; j < dates.length; j++) {
+      if (dates[j].position > startPos && dates[j].position < endPos) {
+        endPos = dates[j].position;
+      }
     }
+    
+    // Get the full post content with date header
+    const fullPostContent = posts.substring(startPos, endPos).trim();
+    
+    // Check if this post is already marked as posted to Bluesky
+    if (fullPostContent.includes(POSTED_MARKER)) {
+      console.log(`Post from ${currentDate.date} already posted to Bluesky, skipping...`);
+      continue;
+    }
+    
+    // Extract post content (skipping the date line)
+    const lines = fullPostContent.split('\n');
+    const postContent = lines.slice(1).join('\n').trim();
+    
+    latestUnpostedPost = currentDate;
+    latestPostContent = postContent;
+    latestPostFullContent = fullPostContent;
+    latestPostStart = startPos;
+    latestPostEnd = endPos;
+    break; // Found the most recent unposted content
   }
   
-  // Extract post content (skipping the date line)
-  const latestPostWithDate = posts.substring(startPos, endPos).trim();
-  const lines = latestPostWithDate.split('\n');
-  const postContent = lines.slice(1).join('\n').trim();
+  if (!latestUnpostedPost) {
+    console.log('No unposted content found. All posts are already marked as posted to Bluesky.');
+    return Promise.reject(new Error('No unposted content found'));
+  }
   
-  console.log('Latest post found (', latestDate.date, '):', postContent.substring(0, 50) + '...');
+  console.log('Latest unposted content found (', latestUnpostedPost.date, '):', latestPostContent.substring(0, 50) + '...');
   
   // 2. Authenticate with Bluesky
   console.log('Authenticating with Bluesky...');
@@ -130,7 +171,7 @@ function postToBluesky() {
         repo: response.body.did,
         collection: 'app.bsky.feed.post',
         record: {
-          text: postContent,
+          text: latestPostContent,
           createdAt: now,
           $type: 'app.bsky.feed.post'
         }
@@ -141,6 +182,11 @@ function postToBluesky() {
     .then(response => {
       console.log('Successfully posted to Bluesky!');
       console.log('Post URI:', response.body.uri);
+      
+      // Mark post as posted in the markdown file
+      const updatedContent = markPostAsPosted(fileContent, latestPostStart, latestPostEnd, latestPostFullContent, response.body.uri);
+      fs.writeFileSync(POSTS_FILE, updatedContent, 'utf8');
+      console.log('Updated linkedin-posts.md file to mark post as shared on Bluesky');
       
       return {
         success: true,
@@ -155,6 +201,19 @@ function postToBluesky() {
         message: `Error: ${error.message}`
       };
     });
+}
+
+// Function to mark a post as posted in the markdown file
+function markPostAsPosted(fileContent, startPos, endPos, originalPostContent, postUri) {
+  // Split the file content into parts
+  const beforePost = fileContent.substring(0, startPos);
+  const afterPost = fileContent.substring(endPos);
+  
+  // Create the modified post content with the marker and URI
+  const modifiedPost = originalPostContent + '\n' + POSTED_MARKER + ' ' + postUri;
+  
+  // Combine everything back together
+  return beforePost + modifiedPost + afterPost;
 }
 
 // If called directly from command line
