@@ -1,0 +1,25 @@
+# Environment variables - contains sensitive credentials
+.env
+
+# Node.js dependencies
+node_modules/
+package-lock.json
+
+# Logs
+*.log
+npm-debug.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# OS specific files
+.DS_Store
