@@ -1,18 +1,18 @@
 {
-  "availablePoints": 3,
+  "availablePoints": 0,
   "technical": {
     "name": "Technical",
     "skills": {
       "coding": {
         "level": 2,
-        "points": 4,
+        "points": 7,
         "pointsToNextLevel": 15,
         "description": "Programming and development skills"
       },
       "security": {
-        "level": 1,
-        "points": 8,
-        "pointsToNextLevel": 10,
+        "level": 2,
+        "points": 0,
+        "pointsToNextLevel": 15,
         "description": "Cybersecurity knowledge and practices"
       },
       "architecture": {
@@ -28,7 +28,7 @@
     "skills": {
       "writing": {
         "level": 1,
-        "points": 0,
+        "points": 3,
         "pointsToNextLevel": 10,
         "description": "Written communication and documentation"
       },

@@ -122,8 +122,68 @@ function postToBluesky() {
   }
   
   if (!latestUnpostedPost) {
-    console.log('No unposted content found. All posts are already marked as posted to Bluesky.');
-    return Promise.reject(new Error('No unposted content found'));
+    console.log('No unposted content found. Creating a new Bluesky post from the most recent content...');
+    // Get the most recent post regardless of posting status
+    const mostRecentDate = dates[0];
+    const startPos = posts.indexOf('### ' + mostRecentDate.date, mostRecentDate.position);
+    
+    // Determine where this post ends
+    let endPos = posts.length;
+    for (let j = 0; j < dates.length; j++) {
+      if (dates[j].position > startPos && dates[j].position < endPos) {
+        endPos = dates[j].position;
+      }
+    }
+    
+    // Get the full post content with date header
+    const fullPostContent = posts.substring(startPos, endPos).trim();
+    
+    // Check if there's a Bluesky version available
+    const blueskyVersionRegex = new RegExp(`### ${mostRecentDate.date}.*\(Bluesky version\)`, 'g');
+    let blueskyMatch = blueskyVersionRegex.exec(posts);
+    
+    if (blueskyMatch) {
+      // Use the Bluesky version instead
+      const blueskyStartPos = blueskyMatch.index;
+      
+      // Find where this Bluesky version ends
+      let blueskyEndPos = posts.length;
+      for (let j = 0; j < dates.length; j++) {
+        if (dates[j].position > blueskyStartPos && dates[j].position < blueskyEndPos) {
+          blueskyEndPos = dates[j].position;
+        }
+      }
+      
+      const blueskyContent = posts.substring(blueskyStartPos, blueskyEndPos).trim();
+      const blueskyLines = blueskyContent.split('\n');
+      const blueskyPostContent = blueskyLines.slice(1).join('\n').trim();
+      
+      if (blueskyPostContent.length <= 300) {
+        latestUnpostedPost = { date: mostRecentDate.date, position: blueskyStartPos, isBlueskyVersion: true };
+        latestPostContent = blueskyPostContent;
+        latestPostFullContent = blueskyContent;
+        latestPostStart = blueskyStartPos;
+        latestPostEnd = blueskyEndPos;
+        console.log('Using the Bluesky version of the post');
+        return;
+      }
+    }
+    
+    // Extract post content (skipping the date line)
+    const lines = fullPostContent.split('\n');
+    const postContent = lines.slice(1).join('\n').trim();
+    
+    // Truncate if needed to fit Bluesky's 300 character limit
+    const truncatedContent = postContent.length > 290 
+      ? postContent.substring(0, 290) + '...' 
+      : postContent;
+    
+    latestUnpostedPost = mostRecentDate;
+    latestPostContent = truncatedContent;
+    latestPostFullContent = fullPostContent;
+    latestPostStart = startPos;
+    latestPostEnd = endPos;
+    console.log('Using truncated version of most recent content for Bluesky');
   }
   
   console.log('Latest unposted content found (', latestUnpostedPost.date, '):', latestPostContent.substring(0, 50) + '...');

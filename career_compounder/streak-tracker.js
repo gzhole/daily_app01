@@ -171,18 +171,87 @@ function displayStats(data) {
   // Encouraging message based on streak
   console.log(`\n${getStreakMessage(data.currentStreak)}\n`);
   
-  // Visualization of recent activity (simple text-based)
+  // Visualization of recent activity with calendar
   if (data.days.length > 0) {
-    const recentDays = Math.min(data.days.length, 10);
-    console.log(`📈 Your recent activity (last ${recentDays} days):`);
-    
-    // Simple ASCII chart of recent completions
-    let chart = '';
-    for (let i = Math.max(0, data.days.length - 10); i < data.days.length; i++) {
-      chart += '📆 ';
-    }
-    console.log(chart + '\n');
+    displayCalendarView(data);
   }
+}
+
+// Display a visual calendar view of the current month with completion markers
+function displayCalendarView(data) {
+  const today = new Date();
+  const currentMonth = today.getMonth();
+  const currentYear = today.getFullYear();
+  
+  // Get first day of month and total days in month
+  const firstDayOfMonth = new Date(currentYear, currentMonth, 1);
+  const lastDayOfMonth = new Date(currentYear, currentMonth + 1, 0);
+  const totalDays = lastDayOfMonth.getDate();
+  const startingDay = firstDayOfMonth.getDay(); // 0 = Sunday, 1 = Monday, etc.
+  
+  // Month name
+  const monthNames = [
+    'January', 'February', 'March', 'April', 'May', 'June',
+    'July', 'August', 'September', 'October', 'November', 'December'
+  ];
+  
+  console.log(`\n📅 ${monthNames[currentMonth]} ${currentYear} Calendar:\n`);
+  
+  // Print days of week header
+  console.log('  Sun   Mon   Tue   Wed   Thu   Fri   Sat  ');
+  console.log(' ----- ----- ----- ----- ----- ----- ----- ');
+  
+  // Create set of completed days for this month for faster lookup
+  const completedDaysSet = new Set();
+  data.days.forEach(dayStr => {
+    const day = new Date(dayStr);
+    if (day.getMonth() === currentMonth && day.getFullYear() === currentYear) {
+      completedDaysSet.add(day.getDate());
+    }
+  });
+  
+  // Emoji indicators
+  const COMPLETED_DAY = '✅';
+  const CURRENT_DAY = '🟢';
+  const MISSED_DAY = '⬜';
+  const FUTURE_DAY = '   ';
+  
+  let calendarRow = '';
+  
+  // Add padding for first day of month
+  for (let i = 0; i < startingDay; i++) {
+    calendarRow += '      ';
+  }
+  
+  // Fill calendar with days
+  for (let day = 1; day <= totalDays; day++) {
+    // Determine status of this day
+    let marker;
+    const dayDate = new Date(currentYear, currentMonth, day);
+    const isToday = today.getDate() === day && today.getMonth() === currentMonth && today.getFullYear() === currentYear;
+    const isPast = dayDate < new Date(today.getFullYear(), today.getMonth(), today.getDate());
+    const isCompleted = completedDaysSet.has(day);
+    
+    if (isToday) {
+      marker = isCompleted ? COMPLETED_DAY : CURRENT_DAY;
+    } else if (isPast) {
+      marker = isCompleted ? COMPLETED_DAY : MISSED_DAY;
+    } else {
+      marker = FUTURE_DAY;
+    }
+    
+    // Format day number with padding
+    const dayStr = day.toString().padStart(2);
+    calendarRow += ` ${marker}${dayStr} `;
+    
+    // End of row (Saturday) or end of month
+    if ((startingDay + day) % 7 === 0 || day === totalDays) {
+      console.log(calendarRow);
+      calendarRow = '';
+    }
+  }
+  
+  console.log('\n Legend: ✅ Completed  🟢 Today  ⬜ Missed\n');
 }
 
 // Process command line arguments
