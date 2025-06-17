@@ -5,7 +5,7 @@
     "skills": {
       "coding": {
         "level": 2,
-        "points": 7,
+        "points": 9,
         "pointsToNextLevel": 15,
         "description": "Programming and development skills"
       },
@@ -28,7 +28,7 @@
     "skills": {
       "writing": {
         "level": 1,
-        "points": 3,
+        "points": 6,
         "pointsToNextLevel": 10,
         "description": "Written communication and documentation"
       },

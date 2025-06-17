@@ -1,9 +1,10 @@
 {
   "days": [
-    "2025-06-15"
+    "2025-06-15",
+    "2025-06-17"
   ],
   "currentStreak": 1,
   "longestStreak": 1,
-  "totalDays": 1,
-  "lastCompleted": "2025-06-15"
+  "totalDays": 2,
+  "lastCompleted": "2025-06-17"
 }

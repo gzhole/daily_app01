@@ -227,11 +227,19 @@ function postToBluesky() {
       };
       
       const now = new Date().toISOString();
+      // Ensure the post is under 300 characters
+      const maxLength = 280; // Use 280 to be safe (under the 300 limit)
+      const trimmedContent = latestPostContent.length > maxLength
+        ? latestPostContent.substring(0, maxLength) + '...'
+        : latestPostContent;
+      
+      console.log(`Posting content (${trimmedContent.length} chars): "${trimmedContent}"`);  
+      
       const postData = {
         repo: response.body.did,
         collection: 'app.bsky.feed.post',
         record: {
-          text: latestPostContent,
+          text: trimmedContent,
           createdAt: now,
           $type: 'app.bsky.feed.post'
         }

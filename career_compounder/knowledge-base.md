@@ -9,6 +9,9 @@ This file stores your key takeaways from daily scanning and learning.
 ```
 
 ## Entries
+### 2025-06-16
+- Today I learned: The Model Context Protocol (MCP) is vulnerable to a new genetic algorithm-based attack called GAPMA that can subtly manipulate tool preferences in AI agents. This matters because as MCP becomes the standard for AI agent interoperability in 2025, these stealthy manipulations could redirect traffic and decisions without obvious signs of compromise.
+- Today I learned: Effective MCP security requires defense-in-depth approaches including gateway architectures and Enhanced Tool Definition Interface (ETDI) extensions. This matters because implementing these controls can prevent tool poisoning and credential theft while still maintaining the flexibility that makes MCP valuable for AI agent ecosystems.
 ### 2025-06-15
 - Today I learned: Attackers are now embedding malicious prompts within images that accompany benign text in multimodal LLMs. This matters because it represents a significant evolution in prompt injection techniques that bypasses traditional text-based security defenses.
 - Today I learned: RAG systems are increasingly being targeted for indirect prompt injection via vector databases. This matters because as RAG becomes standard in enterprise LLM deployments, this threatens any system that uses external knowledge bases.

@@ -9,6 +9,12 @@ Today I explored [topic]—here's the key insight: [1-2 sentences].
 ```
 
 ## Post History
+### 2025-06-16
+Today I explored MCP security vulnerabilities—here's the key insight: Attackers are using genetic algorithms (GAPMA) to create stealthy manipulations of AI tool preferences that can redirect tr### 2025-06-16 (Bluesky version)
+GAPMA: New attacks using genetic algorithms to manipulate AI tool choices in MCP systems. Just built a simple detector for these threats! #AISecurityAwareness
+### 2025-06-15
+Today I explored multimodal prompt injection attacks—here's the key insight: Attackers are now embedding malicious prompts within images that accompany benign
+<!-- Posted to Bluesky --> at://did:plc:4e6p2xnz2mm3kf46yaaek3lf/app.bsky.feed.post/3lrrchx5lry2pthreats! #AISecurityAwareness
 ### 2025-06-15
 Today I explored multimodal prompt injection attacks—here's the key insight: Attackers are now embedding malicious prompts within images that accompany benign ### 2025-06-15 (Bluesky version)
 Today I learned: Attackers now hide malicious AI prompts in images that look innocent to humans. This creates a new security challenge that text-only scanning can't detect.
