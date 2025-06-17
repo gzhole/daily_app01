@@ -9,6 +9,10 @@ This file stores your key takeaways from daily scanning and learning.
 ```
 
 ## Entries
+### 2025-06-17
+- Today I learned: MCP's "line jumping" vulnerability allows malicious servers to execute attacks during the tool listing phase, before any tools are invoked. This matters because it bypasses core security boundaries and can lead to code exfiltration or vulnerability insertion without triggering security controls.
+- Today I learned: The MCP architecture's security model can be compromised through tool poisoning attacks, where malicious tool descriptions manipulate model behavior. This matters because it undermines the protocol's security guarantees and requires additional verification layers when implementing MCP clients.
+- Today I learned: Attackers can use MCP servers to create indirect communication channels between isolated components, violating the principle of least privilege. This matters because it expands the attack surface and requires network-level controls to prevent cross-server exploitation.
 ### 2025-06-16
 - Today I learned: The Model Context Protocol (MCP) is vulnerable to a new genetic algorithm-based attack called GAPMA that can subtly manipulate tool preferences in AI agents. This matters because as MCP becomes the standard for AI agent interoperability in 2025, these stealthy manipulations could redirect traffic and decisions without obvious signs of compromise.
 - Today I learned: Effective MCP security requires defense-in-depth approaches including gateway architectures and Enhanced Tool Definition Interface (ETDI) extensions. This matters because implementing these controls can prevent tool poisoning and credential theft while still maintaining the flexibility that makes MCP valuable for AI agent ecosystems.
