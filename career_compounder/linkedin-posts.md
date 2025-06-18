@@ -5,14 +5,11 @@
 [YYYY-MM-DD]
 Today I explored [topic]—here's the key insight: [1-2 sentences].
 [Optional link or resource]
-#[relevant hashtag]
-```
-
-## Post History
-### 2025-06-17
-Today I explored the critical security considerations around Model Context Protocol (MCP) in AI systems—here's the key insight: MCP's "line jumping" ### 2025-06-17 (Bluesky version)
+#### 2025-06-17 (Bluesky version)
 MCP Security Alert: "Line jumping" attacks can bypass security by executing during tool listing. Built a detector to catch these threats before they execute. #AISecurityAwareness
 <!-- Posted to Bluesky --> at://did:plc:4e6p2xnz2mm3kf46yaaek3lf/app.bsky.feed.post/3lrtgfqvx6e2d06-17 (Bluesky version)
+MCP Security Alert: "Line jumping" attacks can bypass security by executing during tool listing. Built a detector to catch these threats before they execute. #AISecurityAwareness
+<!-- Posted to Bluesky --> at://did:plc:4e6p2xnz2mm3kf46yaaek3lf/app.bsky.feed.post/3lrvyxjyzxc2o06-17 (Bluesky version)
 MCP Security Alert: "Line jumping" attacks can bypass security by executing during tool listing. Built a detector to catch these threats before they execute. #AISecurityAwareness
 
 ## Post History
