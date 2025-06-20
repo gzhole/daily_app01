@@ -9,6 +9,10 @@ This file stores your key takeaways from daily scanning and learning.
 ```
 
 ## Entries
+### 2025-06-20
+- Today I learned: DARPA's AI Cyber Challenge (AIxCC) is pioneering the development of AI-powered Cyber Reasoning Systems (CRS) that can automatically detect and patch software vulnerabilities. This matters because it represents a significant leap in cybersecurity, potentially revolutionizing how we secure critical infrastructure by dramatically reducing the time between vulnerability discovery and patching.
+- Today I learned: A basic CRS combines static analysis tools (like Bandit), code metrics (via Radon), and pattern matching (using Semgrep) to identify security issues. This matters because understanding these components provides a foundation for building more advanced automated security analysis tools.
+- Today I learned: The AIxCC competition prioritizes effective patching (3x weight) over just finding vulnerabilities. This matters because it reflects real-world priorities where maintaining system functionality is often more critical than simply identifying potential security issues.
 ### 2025-06-17
 - Today I learned: MCP's "line jumping" vulnerability allows malicious servers to execute attacks during the tool listing phase, before any tools are invoked. This matters because it bypasses core security boundaries and can lead to code exfiltration or vulnerability insertion without triggering security controls.
 - Today I learned: The MCP architecture's security model can be compromised through tool poisoning attacks, where malicious tool descriptions manipulate model behavior. This matters because it undermines the protocol's security guarantees and requires additional verification layers when implementing MCP clients.

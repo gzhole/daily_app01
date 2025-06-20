@@ -3,7 +3,27 @@
 ## Post Template
 ```
 [YYYY-MM-DD]
-Today I explored [topic]—here's the key ins### 2025-06-17 (Bluesky version)
+Today I explored [topic]—here's the key insight: [insight]. [Additional context].
+#RelevantHashtags
+```
+
+## Post History
+### 2025-06-20
+🚀 Just explored DARPA's AI Cyber Challenge (AIxCC) and built a basic Cyber Reasoning System (CRS) from scratch! 
+
+Key takeaways:
+• AIxCC is pioneering AI-powered vulnerability detection and patching at scale
+• CRS combines static analysis, pattern matching, and automated fixes
+• The future of cybersecurity is automated, with AI handling routine security tasks
+
+Built a simple CRS in Python that identifies security issues and suggests fixes. The most fascinating insight? The competition weights effective patchin### 2025-06-20 (Bluesky version)
+Built a basic Cyber Reasoning System after exploring DARPA's AIxCC! Key insight: Automated patching is 3x more valuable than just finding vulnerabilities. The future of security is AI-assisted automation. #AIxCC #CyberSecurity
+<!-- Pending Bluesky post -->
+<!-- Posted to Bluesky --> at://did:plc:4e6p2xnz2mm3kf46yaaek3lf/app.bsky.feed.post/3ls3a2dtti62qKey insight: Automated patching is 3x more valuable than just finding vulnerabilities. The future of security is AI-assisted automation. #AIxCC #CyberSecurity
+<!-- Pending Bluesky post -->
+
+### 2025-06-17 (Bluesky version)
+MCP Security Alert: "Line jumping" attacks can bypass security by executing during tool listing. Built a detector to catch these threats before they execute. #AISecurityAwareness### 2025-06-17 (Bluesky version)
 MCP Security Alert: "Line jumping" attacks can bypass security by executing during tool listing. Built a detector to catch these threats before they execute. #AISecurityAwareness
 <!-- Posted to Bluesky --> at://did:plc:4e6p2xnz2mm3kf46yaaek3lf/app.bsky.feed.post/3lrtgfqvx6e2d06-17 (Bluesky version)
 MCP Security Alert: "Line jumping" attacks can bypass security by executing during tool listing. Built a detector to catch these threats before they execute. #AISecurityAwareness
