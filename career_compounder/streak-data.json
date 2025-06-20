@@ -2,10 +2,11 @@
   "days": [
     "2025-06-15",
     "2025-06-17",
-    "2025-06-18"
+    "2025-06-18",
+    "2025-06-19"
   ],
-  "currentStreak": 2,
-  "longestStreak": 2,
-  "totalDays": 3,
-  "lastCompleted": "2025-06-18"
+  "currentStreak": 3,
+  "longestStreak": 3,
+  "totalDays": 4,
+  "lastCompleted": "2025-06-19"
 }
