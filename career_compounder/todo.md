@@ -4,6 +4,12 @@
 - [x] Build basic Cyber Reasoning System (CRS)
 
 ## Next Steps
+### Today's Task (2025-06-22)
+- [ ] Enhance vulnerability scanner with prototype pollution detection
+  - Add check for unsafe recursive merges
+  - Test with common vulnerable patterns
+  - Add to the existing vulnerability patterns array
+
 ### CRS Enhancements
 - [ ] Add dependency vulnerability scanning with `safety`
 - [ ] Implement automated fix generation for common issues

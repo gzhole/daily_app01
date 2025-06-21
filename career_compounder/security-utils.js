@@ -277,11 +277,106 @@ function validateMCPServerResponse(response) {
 }
 
 /**
+ * Scans code for common security vulnerabilities inspired by the VADER benchmark
+ * Detects issues like SQL injection, XSS, command injection, etc.
+ * 
+ * @function scanForVulnerabilities
+ * @param {string} code - The source code to analyze
+ * @param {string} [language='javascript'] - The programming language of the code
+ * @returns {Object} Scan results with:
+ * @returns {boolean} hasVulnerabilities - True if any vulnerabilities found
+ * @returns {Array} vulnerabilities - Array of found vulnerabilities
+ * @returns {string} vulnerabilities[].type - Type of vulnerability (e.g., 'SQL Injection')
+ * @returns {string} vulnerabilities[].description - Description of the vulnerability
+ * @returns {number} vulnerabilities[].severity - Severity level (1-5, 5 being most severe)
+ * @returns {string} vulnerabilities[].line - Line number where vulnerability was found
+ * @returns {string} [vulnerabilities[].recommendation] - Recommended fix
+ * 
+ * @example
+ * const code = `app.get('/user', (req, res) => {
+ *   db.query('SELECT * FROM users WHERE id = ' + req.query.id);
+ * });`;
+ * const results = scanForVulnerabilities(code);
+ * if (results.hasVulnerabilities) {
+ *   console.warn('Vulnerabilities found:', results.vulnerabilities);
+ * }
+ */
+function scanForVulnerabilities(code, language = 'javascript') {
+  const vulnerabilities = [];
+  const lines = code.split('\n');
+  
+  // Common vulnerability patterns
+  const patterns = [
+    {
+      name: 'SQL Injection',
+      regex: /(?:query|execute|exec)\s*\([^)]*\+[^)]*req(\.query|\.body|\.params|\['query'\]|\['body'\]|\['params'\])[^)]*\)/gi,
+      description: 'Concatenating user input directly into SQL queries can lead to SQL injection',
+      severity: 5,
+      recommendation: 'Use parameterized queries or prepared statements instead of string concatenation'
+    },
+    {
+      name: 'XSS',
+      regex: /(?:<[^>]*\son\w+\s*=|\$\s*\([^)]*<|innerHTML\s*=|document\.write\()/gi,
+      description: 'Potential Cross-Site Scripting (XSS) vulnerability',
+      severity: 4,
+      recommendation: 'Use proper output encoding and avoid using innerHTML with user input'
+    },
+    {
+      name: 'Command Injection',
+      regex: /(?:child_process\.(?:exec|execSync|spawn|spawnSync|execFile|execFileSync)\s*\([^)]*\+[^)]*req(\.query|\.body|\.params|\['query'\]|\['body'\]|\['params'\])[^)]*\))/gi,
+      description: 'Potential command injection vulnerability',
+      severity: 5,
+      recommendation: 'Avoid using user input in command execution. If necessary, use strict input validation and escaping.'
+    },
+    {
+      name: 'Hardcoded Secrets',
+      regex: /(?:password|secret|api[_-]?key|token|pwd)\s*[=:]\s*['"][^'"\n]{8,}['"]/gi,
+      description: 'Hardcoded sensitive information found',
+      severity: 5,
+      recommendation: 'Store sensitive information in environment variables or secure secret management systems'
+    },
+    {
+      name: 'Insecure Dependencies',
+      regex: /(?:require|import)\s*\(?['"](?:express|helmet|bcrypt|jsonwebtoken|passport)['"]\)?/gi,
+      description: 'Potentially outdated or insecure dependency',
+      severity: 3,
+      recommendation: 'Regularly update dependencies and audit for known vulnerabilities using npm audit or similar tools'
+    }
+  ];
+
+  // Scan each line for vulnerabilities
+  lines.forEach((line, index) => {
+    patterns.forEach(pattern => {
+      if (pattern.regex.test(line)) {
+        vulnerabilities.push({
+          type: pattern.name,
+          description: pattern.description,
+          severity: pattern.severity,
+          line: index + 1,
+          recommendation: pattern.recommendation,
+          codeSnippet: line.trim()
+        });
+      }
+    });
+  });
+
+  return {
+    hasVulnerabilities: vulnerabilities.length > 0,
+    vulnerabilities,
+    timestamp: new Date().toISOString(),
+    language,
+    totalLines: lines.length
+  };
+}
+
+/**
  * Export functions for use in other modules
  */
 module.exports = {
   detectPromptInjection,
+  logSecurityEvent,
   detectMCPToolPoisoning,
   validateMCPServerResponse,
+  scanForVulnerabilities,
   logSecurityEvent
 };

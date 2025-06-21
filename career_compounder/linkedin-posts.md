@@ -8,6 +8,17 @@ Today I explored [topic]—here's the key insight: [insight]. [Additional contex
 ```
 
 ## Post History
+### 2025-06-21
+🚀 Just built a lightweight vulnerability scanner inspired by the VADER benchmark! It detects common security issues like SQL injection, XSS, and hardcoded secrets in code.
+
+Key features:
+• Scans for 5+ vulnerability types
+• Provides severity ratings (1-5)
+• Suggests specific fixes
+• Easy to integrate into dev workflows
+
+The ### 2025-06-21 (Bluesky version)
+Built a vulnerability scanner after reading the VADER research. Key insight: Top AI models still miss ~50% of security vulnerabilities. Human expertise + AI = stronger security. #DevSecOps #AISecurity
 ### 2025-06-20
 🚀 Just explored DARPA's AI Cyber Challenge (AIxCC) and built a basic Cyber Reasoning System (CRS) from scratch! 
 
@@ -15,6 +26,9 @@ Key takeaways:
 • AIxCC is pioneering AI-powered vulnerability detection and patching at scale
 • CRS combines static analysis, pattern matching, and automated fixes
 • The future of cybersecurity is automated, with AI handling routine security tasks
+
+Built a simple CRS in Python that identifies security issues and suggests fixes. The most fascinating insight? The competition weights effective patchin
+<!-- Posted to Bluesky --> at://did:plc:4e6p2xnz2mm3kf46yaaek3lf/app.bsky.feed.post/3ls5q7quc7i2hh AI handling routine security tasks
 
 Built a simple CRS in Python that identifies security issues and suggests fixes. The most fascinating insight? The competition weights effective patchin### 2025-06-20 (Bluesky version)
 Built a basic Cyber Reasoning System after exploring DARPA's AIxCC! Key insight: Automated patching is 3x more valuable than just finding vulnerabilities. The future of security is AI-assisted automation. #AIxCC #CyberSecurity
