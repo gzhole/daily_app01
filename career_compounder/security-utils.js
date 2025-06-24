@@ -307,6 +307,56 @@ function scanForVulnerabilities(code, language = 'javascript') {
   
   // Common vulnerability patterns
   const patterns = [
+    // Prototype Pollution Patterns
+    {
+      name: 'Prototype Pollution - Direct __proto__ Assignment',
+      regex: /(?:\b__proto__\s*[:=]|\['?__proto__'?\]\s*[:=]|\bprototype\s*[=:])/,
+      description: 'Direct prototype pollution via __proto__ or prototype assignment',
+      severity: 5,
+      recommendation: 'Avoid directly modifying the prototype. Use Object.create(null) for property copying.'
+    },
+    {
+      name: 'Prototype Pollution - Unsafe Merge/Extend',
+      regex: /(?:\b(?:merge|extend|deep(?:Copy|Clone|Merge)|assignDeep)\s*\([^)]*,\s*[^)]*\)|Object\.assign\s*\([^)]*,\s*[^)]*\))/,
+      description: 'Potential prototype pollution in object merge/extend function',
+      severity: 4,
+      recommendation: 'Use Object.hasOwn() to check property existence, or use a well-tested library like lodash.merge with proper configuration.'
+    },
+    {
+      name: 'Prototype Pollution - Unsafe Property Access',
+      regex: /(?:\[([^\]]+)\]\s*=\s*[^;]+\b(?:__proto__|prototype)\b|\b(?:Object\.setPrototypeOf|Object\.defineProperty|Object\.defineProperties)\s*\()/,
+      description: 'Unsafe property access that could lead to prototype pollution',
+      severity: 4,
+      recommendation: 'Validate property names and avoid using user input to access object properties.'
+    },
+    {
+      name: 'Prototype Pollution - Path Manipulation',
+      regex: /(?:\b(?:set|get|delete)\s*\[([^\]]+)\]|\b(?:set|get|delete)\s*\.\s*\[([^\]]+)\])/,
+      description: 'Dynamic property access that could be used for prototype pollution',
+      severity: 3,
+      recommendation: 'Validate property names when using dynamic property access.'
+    },
+    {
+      name: 'Prototype Pollution - Recursive Merge',
+      regex: /function\s+\w+\s*\([^)]*\)\s*\{[^}]*\bfor\s*\([^;]*\s+in\s+[^)]*\)[^}]*\b(?:\w+\s*=\s*\{\s*\}|\w+\s*=\s*new\s+Object\s*\(\s*\)|\w+\s*\[\s*\w+\s*\]\s*=\s*[^;]+)/,
+      description: 'Recursive merge function that may be vulnerable to prototype pollution',
+      severity: 4,
+      recommendation: 'Check for hasOwnProperty or use Object.create(null) for new objects.'
+    },
+    {
+      name: 'Prototype Pollution - Path Traversal',
+      regex: /(?:\w+\s*\[\s*[\w.]+\s*\]\s*=\s*[^;]+|\w+\s*\.\s*\[\s*[\w.]+\s*\]\s*=\s*[^;]+)/,
+      description: 'Dynamic property access that could be used for prototype pollution',
+      severity: 4,
+      recommendation: 'Validate property names when using dynamic property access.'
+    },
+    {
+      name: 'Prototype Pollution - Unsafe Object Creation',
+      regex: /(?:\w+\s*=\s*\{\s*\}|\w+\s*=\s*new\s+Object\s*\(\s*\))(?![^}]*hasOwnProperty\s*\(|\/\*.*?safe.*?\*\/)/,
+      description: 'Creating objects without proper prototype protection',
+      severity: 3,
+      recommendation: 'Use Object.create(null) to create objects without prototype chain.'
+    },
     {
       name: 'SQL Injection',
       regex: /(?:query|execute|exec)\s*\([^)]*\+[^)]*req(\.query|\.body|\.params|\['query'\]|\['body'\]|\['params'\])[^)]*\)/gi,

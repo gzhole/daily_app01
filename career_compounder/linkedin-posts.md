@@ -1,15 +1,17 @@
-# Career-Compounder LinkedIn Posts
+#### 2025-06-22 (Bluesky version)
+🚀 Enhanced our security scanner with prototype pollution detection! Now catches unsafe merge patterns and dynamic property access that could lead to security issues. #WebSecurity #JavaScript #PrototypePollution
 
-## Post Template
-```
-[YYYY-MM-DD]
-Today I explored [topic]—here's the key insight: [insight]. [Additional context].
-#RelevantHashtags
-```
-
-## Post History
 ### 2025-06-21
 🚀 Just built a lightweight vulnerability scanner inspired by the VADER benchmark! It detects common security issues like SQL injection, XSS, and hardcoded secrets in code.
+
+Key features:
+• Scans for 5+ vulnerability types
+• Provides severity ratings (1-5)
+• Suggests specific fixes
+• Easy to integrate into dev workflows
+
+The
+<!-- Posted to Bluesky --> at://did:plc:4e6p2xnz2mm3kf46yaaek3lf/app.bsky.feed.post/3ls7x2wmtb62aXSS, and hardcoded secrets in code.
 
 Key features:
 • Scans for 5+ vulnerability types
