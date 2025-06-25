@@ -1,6 +1,12 @@
-#### 2025-06-22 (Bluesky version)
-🚀 Enhanced our security scanner with prototype pollution detection! Now catches unsafe merge patterns and dynamic property access that could lead to security issues. #WebSecu### 2025-06-16 (Bluesky version)
+### 2025-06-24
+Today I explored how AI is reshaping developer roles—here's the key insight: As AI automates routine coding, the most valuable developers will be those who combine technical expertise with stron### 2025-06-16 (Bluesky version)
 GAPMA: New attacks using genetic algorithms to manipulate AI tool choices in MCP systems. Just built a simple detector for these threats! #AISecurityAwareness
+### 2025-06-15
+Today I explored multimodal prompt injection attacks—here's the key insight: Attackers are now embedding malicious prompts within images that accompany benign
+<!-- Posted to Bluesky --> at://did:plc:4e6p2xnz2mm3kf46yaaek3lf/app.bsky.feed.post/3lrrchx5lry2pthreats! #AISecurityAwareness
+### 2025-06-15
+Today I explored multimodal prompt injection attacks—here's the key insight: Attackers are now embedding malicious prompts within images that accompany benign
+<!-- Posted to Bluesky --> at://did:plc:4e6p2xnz2mm3kf46yaaek3lf/app.bsky.feed.post/3lsfkoghy462hnipulate AI tool choices in MCP systems. Just built a simple detector for these threats! #AISecurityAwareness
 ### 2025-06-15
 Today I explored multimodal prompt injection attacks—here's the key insight: Attackers are now embedding malicious prompts within images that accompany benign
 <!-- Posted to Bluesky --> at://did:plc:4e6p2xnz2mm3kf46yaaek3lf/app.bsky.feed.post/3lrrchx5lry2pthreats! #AISecurityAwareness

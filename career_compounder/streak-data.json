@@ -5,10 +5,11 @@
     "2025-06-18",
     "2025-06-19",
     "2025-06-20",
-    "2025-06-22"
+    "2025-06-22",
+    "2025-06-25"
   ],
   "currentStreak": 1,
   "longestStreak": 4,
-  "totalDays": 6,
-  "lastCompleted": "2025-06-22"
+  "totalDays": 7,
+  "lastCompleted": "2025-06-25"
 }
