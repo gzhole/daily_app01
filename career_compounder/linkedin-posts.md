@@ -1,25 +1,12 @@
 #### 2025-06-22 (Bluesky version)
-🚀 Enhanced our security scanner with prototype pollution detection! Now catches unsafe merge patterns and dynamic property access that could lead to security issues. #WebSecurity #JavaScript #PrototypePollution
-
-### 2025-06-21
-🚀 Just built a lightweight vulnerability scanner inspired by the VADER benchmark! It detects common security issues like SQL injection, XSS, and hardcoded secrets in code.
-
-Key features:
-• Scans for 5+ vulnerability types
-• Provides severity ratings (1-5)
-• Suggests specific fixes
-• Easy to integrate into dev workflows
-
-The
-<!-- Posted to Bluesky --> at://did:plc:4e6p2xnz2mm3kf46yaaek3lf/app.bsky.feed.post/3ls7x2wmtb62aXSS, and hardcoded secrets in code.
-
-Key features:
-• Scans for 5+ vulnerability types
-• Provides severity ratings (1-5)
-• Suggests specific fixes
-• Easy to integrate into dev workflows
-
-The ### 2025-06-21 (Bluesky version)
+🚀 Enhanced our security scanner with prototype pollution detection! Now catches unsafe merge patterns and dynamic property access that could lead to security issues. #WebSecu### 2025-06-16 (Bluesky version)
+GAPMA: New attacks using genetic algorithms to manipulate AI tool choices in MCP systems. Just built a simple detector for these threats! #AISecurityAwareness
+### 2025-06-15
+Today I explored multimodal prompt injection attacks—here's the key insight: Attackers are now embedding malicious prompts within images that accompany benign
+<!-- Posted to Bluesky --> at://did:plc:4e6p2xnz2mm3kf46yaaek3lf/app.bsky.feed.post/3lrrchx5lry2pthreats! #AISecurityAwareness
+### 2025-06-15
+Today I explored multimodal prompt injection attacks—here's the key insight: Attackers are now embedding malicious prompts within images that accompany benign
+<!-- Posted to Bluesky --> at://did:plc:4e6p2xnz2mm3kf46yaaek3lf/app.bsky.feed.post/3lscxuvymak2l### 2025-06-21 (Bluesky version)
 Built a vulnerability scanner after reading the VADER research. Key insight: Top AI models still miss ~50% of security vulnerabilities. Human expertise + AI = stronger security. #DevSecOps #AISecurity
 ### 2025-06-20
 🚀 Just explored DARPA's AI Cyber Challenge (AIxCC) and built a basic Cyber Reasoning System (CRS) from scratch! 

@@ -396,16 +396,63 @@ function scanForVulnerabilities(code, language = 'javascript') {
 
   // Scan each line for vulnerabilities
   lines.forEach((line, index) => {
+    // Skip comments and empty lines for better performance
+    const trimmedLine = line.trim();
+    if (trimmedLine.startsWith('//') || trimmedLine.startsWith('/*') || trimmedLine === '') {
+      return;
+    }
+
+    // Skip common false positive patterns
+    if (trimmedLine.match(/\b(?:class|interface|type|function|const|let|var)\s+\w+\s*(?:extends|implements)\s*\w+/)) {
+      return;
+    }
+
     patterns.forEach(pattern => {
-      if (pattern.regex.test(line)) {
-        vulnerabilities.push({
-          type: pattern.name,
-          description: pattern.description,
-          severity: pattern.severity,
-          line: index + 1,
-          recommendation: pattern.recommendation,
-          codeSnippet: line.trim()
-        });
+      // Skip if we've already found a vulnerability on this line
+      if (vulnerabilities.some(v => v.line === index + 1)) {
+        return;
+      }
+
+      // Test for vulnerability pattern
+      const matches = line.match(pattern.regex);
+      if (matches) {
+        // Additional validation for certain patterns
+        let isFalsePositive = false;
+        const lowerLine = line.toLowerCase();
+
+        // Skip common false positives
+        if (lowerLine.includes('prototype') && 
+            (lowerLine.includes('function') || 
+             lowerLine.includes('class') ||
+             lowerLine.includes('extends') ||
+             lowerLine.includes('interface'))) {
+          isFalsePositive = true;
+        }
+        
+        // Skip test files and common test patterns
+        if (line.includes('test') || line.includes('spec') || line.includes('mock') || line.includes('stub')) {
+          isFalsePositive = true;
+        }
+
+        // Skip TypeScript type definitions
+        if (line.includes(':') && (line.includes('{') || line.includes('}'))) {
+          const beforeColon = line.split(':')[0].trim();
+          if (beforeColon.endsWith('}') || beforeColon.endsWith('>')) {
+            isFalsePositive = true;
+          }
+        }
+        
+        if (!isFalsePositive) {
+          vulnerabilities.push({
+            type: pattern.name,
+            description: pattern.description,
+            severity: pattern.severity,
+            line: index + 1,
+            recommendation: pattern.recommendation,
+            codeSnippet: trimmedLine.length > 100 ? trimmedLine.substring(0, 100) + '...' : trimmedLine,
+            match: (matches[0] || 'Pattern matched').substring(0, 100)
+          });
+        }
       }
     });
   });

@@ -9,6 +9,10 @@ This file stores your key takeaways from daily scanning and learning.
 ```
 
 ## Entries
+### 2025-06-23
+- Today I learned: Veeam patched a critical RCE vulnerability (CVE-2025-23121) affecting all versions before 12.3.2. This matters because Veeam's widespread use in enterprise backup solutions makes this a high-value target for attackers, potentially compromising sensitive backup data.
+- Today I learned: Microsoft's June 2025 Patch Tuesday addressed 67 vulnerabilities, including critical RCEs in Windows components. This matters because several of these vulnerabilities are being actively exploited in the wild, requiring immediate patching to prevent system compromise.
+- Today I learned: 28.3% of CVEs in Q1 2025 were exploited within 24 hours of disclosure. This matters because it highlights the shrinking window for patching and the need for organizations to implement rapid vulnerability management processes.
 ### 2025-06-20
 - Today I learned: DARPA's AI Cyber Challenge (AIxCC) is pioneering the development of AI-powered Cyber Reasoning Systems (CRS) that can automatically detect and patch software vulnerabilities. This matters because it represents a significant leap in cybersecurity, potentially revolutionizing how we secure critical infrastructure by dramatically reducing the time between vulnerability discovery and patching.
 - Today I learned: A basic CRS combines static analysis tools (like Bandit), code metrics (via Radon), and pattern matching (using Semgrep) to identify security issues. This matters because understanding these components provides a foundation for building more advanced automated security analysis tools.
