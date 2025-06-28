@@ -34,3 +34,22 @@
   - https://www.first.org/epss/
 - [ ] Review CISA's Known Exploited Vulnerabilities Catalog
   - https://www.cisa.gov/known-exploited-vulnerabilities-catalog
+
+### Personal Projects
+#### Chess AI Assistant
+- [ ] Research chess libraries and APIs
+  - Stockfish.js for chess engine
+  - chess.js for move validation
+  - chessboard.js for UI
+- [ ] Set up basic project structure
+  - React frontend
+  - Node.js backend
+  - SQLite database
+- [ ] Core features
+  - Position analysis with explanations
+  - Study position saving
+  - Progress tracking
+- [ ] Integration
+  - Chessable course import
+  - AI explanation generation (Claude API)
+  - Spaced repetition system

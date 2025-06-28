@@ -1,3 +1,17 @@
+### 2025-06-28
+🚀 **AI Coding Assistants: Choosing the Right Tool for the Job**  
+
+Today I explored the evolving landscape of AI coding assistants and was impressed by how specialized these tools have become. ### 2025-06-16 (Bluesky version)
+GAPMA: New attacks using genetic algorithms to manipulate AI tool choices in MCP systems. Just built a simple detector for these threats! #AISecurityAwareness
+### 2025-06-15
+Today I explored multimodal prompt injection attacks—here's the key insight: Attackers are now embedding malicious prompts within images that accompany benign
+<!-- Posted to Bluesky --> at://did:plc:4e6p2xnz2mm3kf46yaaek3lf/app.bsky.feed.post/3lrrchx5lry2pthreats! #AISecurityAwareness
+### 2025-06-15
+Today I explored multimodal prompt injection attacks—here's the key insight: Attackers are now embedding malicious prompts within images that accompany benign
+<!-- Posted to Bluesky --> at://did:plc:4e6p2xnz2mm3kf46yaaek3lf/app.bsky.feed.post/3lsoascojva2areerGrowth
+
+---
+
 ### 2025-06-25
 Today I enhanced my vulnerability scanner with EPSS (Exploit Prediction Scoring System) integration—here's the key insight: By combining static code analysis with real-world exploit probability ### 2025-06-16 (Bluesky version)
 GAPMA: New attacks using genetic algorithms to manipulate AI tool choices in MCP systems. Just built a simple detector for these threats! #AISecurityAwareness
