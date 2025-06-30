@@ -9,6 +9,9 @@ This file stores your key takeaways from daily scanning and learning.
 ```
 
 ## Entries
+### 2025-06-30
+- Today I learned: AI-powered attacks have surged by 67% in 2025, with threat actors using machine learning to bypass security measures and create sophisticated phishing campaigns. This matters because it represents a fundamental shift in the threat landscape, requiring security professionals to develop new defensive strategies that can counter AI-driven threats.
+- Today I learned: Ransomware-as-a-Service (RaaS) has led to an 8% increase in North American attacks, with small and medium businesses becoming prime targets. This matters because it lowers the technical barrier for attackers while professionalizing the ransomware ecosystem, making these attacks more frequent and sophisticated.
 ### 2025-06-24
 - Today I learned: As AI automates routine coding tasks, the most valuable developers will be those who can effectively collaborate with AI while bringing human judgment, creativity, and ethical considerations to complex problems. This matters because it signals a shift from pure coding skills to a combination of technical expertise and uniquely human skills that complement AI capabilities.
 - Today I learned: The most in-demand AI collaboration skills include prompt engineering, code review of AI outputs, and testing/security validation, alongside soft skills like communication, problem-solving, and ethical thinking. This matters because these hybrid technical-soft skills will differentiate developers in an AI-augmented workforce.

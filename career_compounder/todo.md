@@ -8,7 +8,19 @@
   - Created test cases for various attack vectors
 
 ## Next Steps
-### Today's Task (2025-06-29)
+### Today's Task (2025-06-30)
+- [ ] Research EPSS v4's new features and document key changes from v3
+  - Review EPSS v4 documentation and release notes
+  - Identify improvements over v3
+  - Document impact on vulnerability prioritization
+  - Prepare test cases for implementation
+
+### Tomorrow's Task (2025-07-01)
+- [ ] Add test cases for enhanced prototype pollution detection
+  - Create 5+ test cases for new patterns
+  - Add benchmark for performance impact (<2% regression)
+  - Update README with new patterns and usage
+  - Document auto-fix suggestions for common patterns
 - [ ] Fix unhandled promise rejections in EPSS test suite
   - Add proper error handling for async tests
   - Ensure all promises are properly awaited
