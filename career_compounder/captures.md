@@ -1,5 +1,19 @@
 # Career-Compounder Captures
 
+## June 29, 2025
+
+### 1. EPSS v4 and Vulnerability Trends
+EPSS v4 was released in March 2025 with improved vulnerability scoring, while 2024 is projected to see 34,650 vulnerabilities, continuing the upward trend in software vulnerabilities.
+
+**This matters because:** Understanding these trends helps prioritize vulnerability management efforts and informs security strategies for the coming year.
+
+### 2. CVSS Vector Patterns
+The most common vulnerability pattern for 2024 is network-accessible vulnerabilities with high impact (CVSS: AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H), highlighting the continued importance of network security controls.
+
+**This matters because:** Recognizing these patterns allows for more targeted security controls and better resource allocation in vulnerability management programs.
+
+---
+
 ## June 28, 2025
 
 ### 1. AI Coding Assistant Landscape
