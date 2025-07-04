@@ -6,7 +6,7 @@ Today I explored multimodal prompt injection attacks—here's the key insight: A
 <!-- Posted to Bluesky --> at://did:plc:4e6p2xnz2mm3kf46yaaek3lf/app.bsky.feed.post/3lrrchx5lry2pthreats! #AISecurityAwareness
 ### 2025-06-15
 Today I explored multimodal prompt injection attacks—here's the key insight: Attackers are now embedding malicious prompts within images that accompany benign
-<!-- Posted to Bluesky --> at://did:plc:4e6p2xnz2mm3kf46yaaek3lf/app.bsky.feed.post/3lswsgsygau2p6yaaek3lf/app.bsky.feed.post/3lsud3rmfnq2qSS v4 & 2024 Vulnerability Trends**  
+<!-- Posted to Bluesky --> at://did:plc:4e6p2xnz2mm3kf46yaaek3lf/app.bsky.feed.post/3lt54wnbseh2h<!-- Posted to Bluesky --> at://did:plc:4e6p2xnz2mm3kf46yaaek3lf/app.bsky.feed.post/3lswsgsygau2p6yaaek3lf/app.bsky.feed.post/3lsud3rmfnq2qSS v4 & 2024 Vulnerability Trends**  
 
 Just wrapped up my daily #CareerCompounder session, diving into the latest in vulnerability management:
 

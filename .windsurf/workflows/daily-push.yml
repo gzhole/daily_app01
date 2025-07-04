@@ -1,0 +1,47 @@
+name: Daily Bluesky Post and GitHub Sync
+description: |
+  This workflow automates the process of posting daily content to Bluesky
+  and pushing updates to GitHub as part of the Career-Compounder routine.
+
+# This workflow can be triggered manually or on a schedule
+triggers:
+  - manual
+  # Uncomment below to run daily at 9:00 AM
+  # - schedule: "0 9 * * *"
+
+steps:
+  - name: Check for today's content
+    run: |
+      echo "Checking for today's content in linkedin-posts.md..."
+      if ! grep -q "### $(date +'%Y-%m-%d')" career_compounder/linkedin-posts.md; then
+        echo "Error: No content found for today. Please run the Career-Compounder routine first."
+        exit 1
+      fi
+
+  - name: Post to Bluesky
+    run: |
+      echo "Posting today's content to Bluesky..."
+      cd career_compounder
+      if ! node post-today-bluesky.js; then
+        echo "Warning: Failed to post to Bluesky. Continuing with GitHub sync..."
+      fi
+
+  - name: Git add changes
+    run: |
+      echo "Staging changes for commit..."
+      git add .
+      git diff --cached --quiet || {
+        git commit -m "Update: Daily Career-Compounder progress $(date +'%Y-%m-%d')"
+      } || echo "No changes to commit"
+
+  - name: Push to GitHub
+    run: |
+      echo "Pushing changes to GitHub..."
+      git pull --rebase
+      git push
+
+  - name: Completion message
+    run: |
+      echo "✅ Daily sync completed successfully!"
+      echo "📝 Bluesky post: https://bsky.app/profile/$(grep BLUESKY_USERNAME career_compounder/.env | cut -d '=' -f2)"
+      echo "📦 GitHub: https://github.com/$(git remote -v | head -n1 | awk -F'[/: ]' '{print $4 "/" $5}' | sed 's/\.git$//')"

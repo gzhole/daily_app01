@@ -6,15 +6,11 @@ const { LinkedinScraper, events } = require('linkedin-jobs-scraper');
 
 // Configuration
 const CONFIG_FILE = path.join(__dirname, '.env');
-const POST_CONTENT = `🚀 Just wrapped up my daily #CareerCompounder session, diving into the latest in vulnerability management:
+const POST_CONTENT = `Today I reflected on the hidden costs of "vibe coding" - that state of flow where we write code quickly but often skip documentation and tests. While it feels productive in the moment, I've learned this approach can create technical debt that slows down future development.
 
-• EPSS v4 is here (March 2025) with improved scoring for better vulnerability prioritization
-• 2024 is projected to see 34,650+ vulnerabilities, continuing the upward trend
-• The most common pattern? Network-accessible vulns with high impact (CVSS: AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H)
+Key takeaway: Balancing flow with structured practices leads to more maintainable, team-friendly code. The most effective developers know when to embrace the vibe and when to step back and document.
 
-Key takeaway: As attack surfaces grow, tools like EPSS are becoming essential for security teams to focus on what matters most.
-
-#CyberSecurity #VulnerabilityManagement #EPSS #InfoSec #ContinuousLearning`;
+#SoftwareDevelopment #CodingBestPractices #TechnicalDebt #CareerGrowth`;
 
 // Load environment variables
 async function loadConfig() {
