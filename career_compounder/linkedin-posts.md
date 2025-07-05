@@ -1,8 +1,12 @@
-### 2025-07-01 (Bluesky version)
-Today I explored LLM capabilities—here's the key insight: While models like GPT-3.5 excel at language tasks through pattern recognition, they lack true understanding or continu### 2025-06-16 (Bluesky version)
+### 2025-07-05
+Today I explored AI-powered security analysis—here's the key insight: While traditional tools excel at pattern-matching known vulnerabilities, LLMs bring semantic understanding that catches soph### 2025-06-16 (Bluesky version)
 GAPMA: New attacks using genetic algorithms to manipulate AI tool choices in MCP systems. Just built a simple detector for these threats! #AISecurityAwareness
 ### 2025-06-15
 Today I explored multimodal prompt injection attacks—here's the key insight: Attackers are now embedding malicious prompts within images that accompany benign
+<!-- Posted to Bluesky --> at://did:plc:4e6p2xnz2mm3kf46yaaek3lf/app.bsky.feed.post/3lrrchx5lry2pthreats! #AISecurityAwareness
+### 2025-06-15
+Today I explored multimodal prompt injection attacks—here's the key insight: Attackers are now embedding malicious prompts within images that accompany benign
+<!-- Posted to Bluesky --> at://did:plc:4e6p2xnz2mm3kf46yaaek3lf/app.bsky.feed.post/3lt7pay7eua2oprompts within images that accompany benign
 <!-- Posted to Bluesky --> at://did:plc:4e6p2xnz2mm3kf46yaaek3lf/app.bsky.feed.post/3lrrchx5lry2pthreats! #AISecurityAwareness
 ### 2025-06-15
 Today I explored multimodal prompt injection attacks—here's the key insight: Attackers are now embedding malicious prompts within images that accompany benign
