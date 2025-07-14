@@ -9,6 +9,10 @@ This file stores your key takeaways from daily scanning and learning.
 ```
 
 ## Entries
+### 2025-07-13
+- Today I learned: Agentic loops that pair an LLM with iterative planning and static-analysis tools boost multi-repo taint-flow success from 31 % to 67 %, at the cost of roughly 2-3× more tokens and latency. This matters because using agents dramatically improves accuracy on large codebases where a single LLM context window is insufficient.
+- Today I learned: Plain LLM calls still excel for small, single-file questions, whereas agent frameworks shine on multi-file call-graph problems requiring external tooling and self-reflection. This matters because selecting the right architecture lets teams balance cost versus accuracy for their specific analysis workload.
+
 ### 2025-06-30
 - Today I learned: AI-powered attacks have surged by 67% in 2025, with threat actors using machine learning to bypass security measures and create sophisticated phishing campaigns. This matters because it represents a fundamental shift in the threat landscape, requiring security professionals to develop new defensive strategies that can counter AI-driven threats.
 - Today I learned: Ransomware-as-a-Service (RaaS) has led to an 8% increase in North American attacks, with small and medium businesses becoming prime targets. This matters because it lowers the technical barrier for attackers while professionalizing the ransomware ecosystem, making these attacks more frequent and sophisticated.

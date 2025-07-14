@@ -8,10 +8,11 @@
     "2025-06-22",
     "2025-06-25",
     "2025-06-30",
-    "2025-07-01"
+    "2025-07-01",
+    "2025-07-14"
   ],
-  "currentStreak": 2,
+  "currentStreak": 1,
   "longestStreak": 4,
-  "totalDays": 9,
-  "lastCompleted": "2025-07-01"
+  "totalDays": 10,
+  "lastCompleted": "2025-07-14"
 }

@@ -44,12 +44,8 @@ function postToBluesky() {
   // 1. Read the latest post from your markdown file
   console.log('Reading latest post from markdown file...');
   const fileContent = fs.readFileSync(POSTS_FILE, 'utf8');
-  const posts = fileContent.split('## Post History')[1];
-  
-  if (!posts) {
-    console.error('No posts found in the file');
-    return Promise.reject(new Error('No posts found'));
-  }
+  const posts = fileContent; // search entire file instead of only after Post History
+
   
   // Extract all posts, with preference for Bluesky-specific posts
   // Look first for Bluesky version posts
@@ -61,15 +57,13 @@ function postToBluesky() {
     dates.push({ date: match[1], position: match.index, isBlueskyVersion: true });
   }
   
-  // If no Bluesky-specific posts, fall back to regular posts
-  if (dates.length === 0) {
-    const regularDateRegex = /### (\d{4}-\d{2}-\d{2})/g;
-    while ((match = regularDateRegex.exec(posts)) !== null) {
-      // Skip if this contains 'Bluesky version' as we already processed those
-      const postHeader = posts.substring(match.index, match.index + 50);
-      if (!postHeader.includes('Bluesky version')) {
-        dates.push({ date: match[1], position: match.index, isBlueskyVersion: false });
-      }
+  // Also capture regular dated posts (excluding those already captured)
+  const regularDateRegex = /### (\d{4}-\d{2}-\d{2})/g;
+  while ((match = regularDateRegex.exec(posts)) !== null) {
+    const postHeader = posts.substring(match.index, match.index + 100);
+    const alreadyCaptured = dates.some(d => d.date === match[1] && d.position === match.index);
+    if (!alreadyCaptured && !postHeader.includes('Bluesky version')) {
+      dates.push({ date: match[1], position: match.index, isBlueskyVersion: false });
     }
   }
   

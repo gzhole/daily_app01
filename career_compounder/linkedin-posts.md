@@ -1,12 +1,12 @@
 ### 2025-07-05
-Today I explored AI-powered security analysis—here's the key insight: While traditional tools excel at pattern-matching known vulnerabilities, LLMs bring semantic understanding that catches soph### 2025-06-16 (Bluesky version)
+Today I explored AI-powered security analysis—here's the key insight: While traditional tools excel at pattern-matching known vulnerabilities, LLMs bring semantic understanding that catches soph#### 2025-06-16 (Bluesky version)
 GAPMA: New attacks using genetic algorithms to manipulate AI tool choices in MCP systems. Just built a simple detector for these threats! #AISecurityAwareness
 ### 2025-06-15
 Today I explored multimodal prompt injection attacks—here's the key insight: Attackers are now embedding malicious prompts within images that accompany benign
 <!-- Posted to Bluesky --> at://did:plc:4e6p2xnz2mm3kf46yaaek3lf/app.bsky.feed.post/3lrrchx5lry2pthreats! #AISecurityAwareness
 ### 2025-06-15
 Today I explored multimodal prompt injection attacks—here's the key insight: Attackers are now embedding malicious prompts within images that accompany benign
-<!-- Posted to Bluesky --> at://did:plc:4e6p2xnz2mm3kf46yaaek3lf/app.bsky.feed.post/3lt7pay7eua2oprompts within images that accompany benign
+<!-- Posted to Bluesky --> at://did:plc:4e6p2xnz2mm3kf46yaaek3lf/app.bsky.feed.post/3ltv7w255rx2l<!-- Posted to Bluesky --> at://did:plc:4e6p2xnz2mm3kf46yaaek3lf/app.bsky.feed.post/3lt7pay7eua2oprompts within images that accompany benign
 <!-- Posted to Bluesky --> at://did:plc:4e6p2xnz2mm3kf46yaaek3lf/app.bsky.feed.post/3lrrchx5lry2pthreats! #AISecurityAwareness
 ### 2025-06-15
 Today I explored multimodal prompt injection attacks—here's the key insight: Attackers are now embedding malicious prompts within images that accompany benign
@@ -73,7 +73,8 @@ Built a basic Cyber Reasoning System after exploring DARPA's AIxCC! Key insight:
 <!-- Pending Bluesky post -->
 
 ### 2025-06-17 (Bluesky version)
-MCP Security Alert: "Line jumping" attacks can bypass security by executing during tool listing. Built a detector to catch these threats before they execute. #AISecurityAwareness### 2025-06-17 (Bluesky version)
+MCP Security Alert: "Line jumping" attacks can bypass security by executing during tool listing. Built a detector to catch these threats before they execute. #AISecurityAwareness
+<!-- Posted to Bluesky --> at://did:plc:4e6p2xnz2mm3kf46yaaek3lf/app.bsky.feed.post/3ltv7ybgtm32g### 2025-06-17 (Bluesky version)
 MCP Security Alert: "Line jumping" attacks can bypass security by executing during tool listing. Built a detector to catch these threats before they execute. #AISecurityAwareness
 <!-- Posted to Bluesky --> at://did:plc:4e6p2xnz2mm3kf46yaaek3lf/app.bsky.feed.post/3lrtgfqvx6e2d06-17 (Bluesky version)
 MCP Security Alert: "Line jumping" attacks can bypass security by executing during tool listing. Built a detector to catch these threats before they execute. #AISecurityAwareness
@@ -84,8 +85,13 @@ MCP Security Alert: "Line jumping" attacks can bypass security by executing duri
 <!-- Posted to Bluesky --> at://did:plc:4e6p2xnz2mm3kf46yaaek3lf/app.bsky.feed.post/3lrvyxjyzxc2o06-17 (Bluesky version)
 MCP Security Alert: "Line jumping" attacks can bypass security by executing during tool listing. Built a detector to catch these threats before they execute. #AISecurityAwareness
 
+### 2025-07-13
+Today I explored how agentic AI stacks up against a plain LLM for multi-file data-flow analysis—here's the key insight: Pairing an LLM with an agent loop plus static-analysis tools doubled success rates (31 % → 67 %), at the cost of ~2-3× tokens & latency. The lesson: match your architecture to the scope of the codebase. #AI #LLMAgents #DevSecOps
+
+<!-- Pending LinkedIn post -->
+
 ## Post History
-### 2025-06-16
+<!-- Posted to Bluesky --> at://did:plc:4e6p2xnz2mm3kf46yaaek3lf/app.bsky.feed.post/3ltv7zj2sse2v### 2025-06-16
 Today I explored MCP security vulnerabilities—here's the key insight: Attackers are using genetic algorithms (GAPMA) to create stealthy manipulations of AI tool preferences that can redirect tr### 2025-06-16 (Bluesky version)
 GAPMA: New attacks using genetic algorithms to manipulate AI tool choices in MCP systems. Just built a simple detector for these threats! #AISecurityAwareness
 ### 2025-06-15

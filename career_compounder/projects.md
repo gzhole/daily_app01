@@ -5,8 +5,8 @@ This file tracks your ongoing micro-projects and their next steps.
 ## Active Micro-Projects
 
 ### Career-Compounder System
-- **Current Status**: Completed security documentation with JSDoc comments and comprehensive security guide
-- **Next Step**: Write test cases for prompt injection detection in security-utils.test.js, focusing on obfuscated injection attempts
+- **Current Status**: Test cases for prompt-injection detection written (`security-utils.test.js`)
+- **Next Step**: Integrate Jest tests into CI workflow and ensure `npm test` passes automatically
 - **Goal**: Streamline daily professional development routine while enhancing security awareness
 
 ## Project History

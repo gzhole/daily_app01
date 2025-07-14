@@ -4,14 +4,17 @@
   "description": "",
   "main": "bluesky-poster.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "devDependencies": {
+    "jest": "^30.0.0"
+  },
   "dependencies": {
-    "@atproto/api": "^0.15.16",
+    "@atproto/api": "^0.15.25",
     "axios": "^1.10.0",
-    "dotenv": "^16.5.0"
+    "dotenv": "^16.6.1"
   }
 }
